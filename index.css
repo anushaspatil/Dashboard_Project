@@ -1,0 +1,538 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+
+Root Variables
+:root {
+  --color-primary: #7380ec;
+  --color-danger: #ff7782;
+  --color-success: #41f1b6;
+  --color-warning: #ffbb55;
+  --color-white: #fff;
+  --color-info-dark: #7d8da1;
+  --color-info-light: #dce1eb;
+  --color-dark: #363949;
+  --color-light: rgba(132, 139, 200, 0.18);
+  --color-primary-variant: #677483;
+  --color-dark-variant: #677483;
+  --color-background: #f6f6f9;
+
+  --card-border-radius: 1rem;
+  --border-radius-1: 0.4rem;
+  --border-radius-2: 0.8rem;
+  --border-radius-3: 1.2rem;
+
+  --card-padding: 1rem;
+  --padding-1: 1.2rem;
+
+  --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+
+*{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  text-decoration: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 14px;
+}
+
+body{
+width: 100vw;
+height: 100vh;
+overflow-x: hidden;
+font-family: poppins, sans-serif;
+background-color: rgb(236, 230, 239);
+}
+
+.container{
+  width: 95%;
+  display: grid;
+  grid-template-columns: 15rem auto 25rem;
+  gap: 1.5rem;
+  margin: 0 auto;
+}
+
+img{
+  width: 100%;
+  display: block;
+} 
+
+aside{
+  height: 100vh;
+}
+
+aside .top{
+  display: flex;
+  align-items: center;
+  margin-top: 1.5rem;
+  justify-content: space-between;
+}
+
+aside .top .logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+
+aside .top .logo img {
+  width: 3rem;
+  height: 3rem;
+}
+
+img{
+  width: 2.6rem;
+  display: block;
+}
+
+h2{
+  font-size: 1.4rem;
+}
+
+aside .top .close{
+  display: none;
+}
+
+aside .navbar{
+  display: flex;
+  flex-direction: column;
+  height: 87vh;
+  width: 12rem;
+  position: relative;
+  top: 3rem;
+  background-color: white;
+}
+
+aside .navbar a{
+  display: flex;
+  gap:1.5rem;
+  height: 3.8rem;
+  align-items: center;
+  transition: all 200ms ease;
+  color:  #7d8da1;
+}
+
+h4{
+  font-size: 0.8rem;
+  font-weight:500;
+}
+
+aside .navbar a span{
+  font-size: 1.5rem;
+  transition: all 200ms ease;
+  margin-left: 2.2rem;
+}
+
+aside .navbar li:last-child{
+  width: 100%;
+  position: absolute;
+  bottom: 1px;
+}
+
+aside .navbar a.activeIcon{
+  background-color: #b3b5c5;
+  color: #7380ec;
+}
+
+aside .navbar a.activeIcon::before{
+  content: "";
+  background-color: #7380ec;
+  width: 7px;
+  height: 100%;
+}
+
+aside .navbar a.activeIcon span {
+  color:#7380ec;
+  margin-left: calc(1rem - 5px);
+}
+
+aside .navbar a:hover{
+  color: #7380ec; ;
+}
+
+aside .navbar a:hover span{
+  margin-left: 2.8rem;
+}
+
+/* MIDDLE PART OF DASHBOARD */
+.center{
+  margin-top: 1.5rem;
+}
+
+.center .date{
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  margin-top: 1rem;
+  background-color:rgb(210, 214, 233);
+  border-radius: 0.4rem;
+}
+
+.center .date input[type='date']{
+  background-color:rgb(210, 214, 233); ;
+}
+
+.center .insight{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.center .insight > div{
+  margin-top: 1rem;
+  background-color: white;
+  /* box-shadow: [horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color]; */
+  box-shadow: 0 2rem 3rem rgb(216, 220, 226);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.center .insight > div:hover{
+  box-shadow: none;
+}
+
+.center .insight >div .middle{
+  display: flex;
+  align-items: center;
+  margin: 0.9rem;
+  justify-content: space-between;
+}
+
+.center .insight > div span{
+  padding: 7.2px;
+  color: #ffffff;
+  border-radius: 29px;
+  font-size: 2rem;
+}
+
+.center .insight .sales span{
+  background-color:#7380ec;
+}
+
+.center .insight .sales span{
+  background-color:#7380ec;
+}
+
+.center .insight .expenses span{
+  background-color: #ff7782;
+}
+
+.center .insight .income span{
+  background-color: #5fe2b6;
+}
+
+.center .insight > div .text-muted{
+  color:#7b7e94;
+}
+
+/* Recent orders and table style */
+
+.center .orders{
+  margin: 1.5rem 0rem;
+}
+
+.center .orders h2{ 
+ margin-bottom: 1.5rem;
+}
+
+.center .orders table{
+  width: 100%;
+  transition: all 300ms ease;
+  background-color: white;
+  border-radius: 1rem;
+  padding:2rem;
+  text-align: center;
+  box-shadow: 0px 2rem 3rem rgb(203, 212, 226);
+}
+
+.center .orders table:hover{
+  box-shadow: none;
+}
+
+.center .orders .heading tbody td{
+ height: 3rem;
+ border-bottom: 1px solid #cedae7;
+}
+
+.orders .heading tbody tr:last-child td{
+  border-bottom: none;
+}
+
+.center h3 a{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  font-size: 1.2rem;
+  padding: 1.5rem;
+  font-weight: lighter;
+}
+
+/* right side aside bar style */
+.rightbar .top button{
+  display: none;
+}
+
+.rightbar .toggle-button{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 3rem;
+  width: 5.5rem;
+  cursor: pointer;
+  background-color: #7f8ca031;
+  border-radius: 5px;
+  margin-left: 5rem;
+}
+
+.rightbar .toggle-button span{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* font-size: 1.5rem; */
+  width: 50%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.rightbar .toggle-button > span.active{
+  background-color: #7380ec;
+}
+
+/* .rightbar .top .user-profile{
+  display: flex;
+  gap: 2rem;
+  text-align: right;
+} */
+
+.rightbar .user-profile h4{
+  font-size: 14px;
+  color:rgb(98, 105, 112)
+}
+
+.rightbar .user-profile h4 b{
+  color:rgb(47, 50, 54)
+}
+
+.rightbar .user-profile small{
+  margin-left: 2rem;
+  color:rgb(98, 105, 112)
+}
+
+.rightbar .top .profile-pic{
+  display: flex;
+  gap: 2rem;
+  text-align: right;
+}
+
+.rightbar .top .profile-pic img{
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 3rem;
+}
+
+.rightbar .updates{
+  display: grid;
+  gap: 1rem;
+}
+ 
+.rightbar .updates h2{
+ margin-top: 1rem;
+ /* margin-right: 13rem; */
+}
+
+.rightbar .updates .notify{
+  height: 16vh;
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: 2.5rem auto;
+  align-items: center;
+  background-color:white;
+  box-shadow: 0 2rem 3rem rgb(216, 220, 226);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.rightbar .updates .notify:hover{
+  box-shadow: none;
+}
+
+.rightbar .updates .notify img{
+  display: block;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 3rem;
+}
+
+.rightbar .updates .notify h4{
+  margin-left: 1rem;
+  font-size: 16px;
+  color: #3b4155c1;
+}
+
+.rightbar .updates .notify h4 b{
+  color: black;
+}
+
+.updates .notify .text-muted{
+ display: flex;
+ flex-direction: row;
+ justify-content: center;
+ align-items: center;
+ width: 7rem;
+ color:rgb(98, 105, 112);
+ margin-left: 3.8rem;
+}
+
+.sale-anaytics{
+  margin-top: 2rem;
+}
+
+.sale-anaytics .onlineOrders{
+  background-color: white;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 1.7rem;
+  margin-top:0.8rem;
+  gap: 3rem;
+  box-shadow: 0 2rem 3rem rgb(216, 220, 226);
+}
+
+.sale-anaytics .onlineOrders:hover{
+  box-shadow: none;
+}
+
+.sale-anaytics .onlineOrders h4{
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.sale-anaytics .onlineOrders p{
+  font-size: 13px;
+  font-weight: bold;
+  color: #41f1b6;
+}
+
+ .onlineOrders .bottom h4{
+  margin-top: 0.9rem;
+}
+
+/* MEDIA-QUERY */
+
+@media only screen and (max-width: 1200px) {
+
+  .container{
+    grid-template-columns: 10rem auto 25rem;
+  }
+
+  .container .left .top h2{
+    display: none;
+  }
+
+  .container .navbar a h4{
+    display: none;
+  }
+
+  .container .navbar li:last-child{
+    position: static;
+  }
+
+  .container .navbar ul{
+    width: 6rem;
+  }
+  
+  .center .insight{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap: 1.5rem ;
+  }
+
+  .rightbar .updates .notify{
+    height: 7rem; 
+  }
+
+  .rightbar .updates{
+    gap: 0.5rem;
+  }
+
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  aside.left{
+    position: fixed;
+    left: 0;
+    height: 100vh;
+    z-index: 5;
+    display: none; 
+  }
+
+ aside .top .close{
+  display: block;
+  margin-left: 1rem;
+  cursor: pointer;
+ }
+
+ aside .navbar li:first-child a:hover span {
+  margin-left: 1rem;
+}
+
+aside .top .logo h2 {
+  display: block;
+}
+
+aside .navbar a h4{
+  display: block;
+}
+
+main.center{
+  margin-top: 6rem;
+}
+
+.center .insight{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+aside.rightbar .top button{
+  display: block;
+  margin-left: 2rem;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+aside.rightbar .top{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  padding: 1rem;
+  height: 4.5rem;
+  background-color: white;
+}
+
+aside.rightbar .top .toggle-button{
+  position:relative;
+  margin-left: 20rem;
+}
+
+aside.rightbar .user-profile{
+  display: none;
+}
+
+aside.rightbar .sale-anaytics .onlineOrders{
+  gap: 10rem;
+}
+}
+
